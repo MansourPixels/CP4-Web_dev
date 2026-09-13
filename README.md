@@ -143,11 +143,28 @@ IA foi usada para apoiar requisitos, documentação SDD, estrutura inicial e rev
 
 ## Integrantes
 
-- Nome do integrante 1 — RM
-- Nome do integrante 2 — RM
-- Nome do integrante 3 — RM
-
-> Atualize os integrantes antes da entrega.
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://avatars.githubusercontent.com/u/88509491?v=4" width="115" alt="Foto de Henrique Bueno"/><br>
+      <sub>
+        <b>Henrique Bueno - RM570591</b>
+      </sub>
+    </td>
+    <td align="center">
+      <img src="https://avatars.githubusercontent.com/u/163877731?v=4" width="115" alt="Foto de Állex Brandão"/><br>
+      <sub>
+        <b>Állex Brandão - RM571383</b>
+      </sub>
+    </td>
+    <td align="center">
+      <img src="https://avatars.githubusercontent.com/u/108024578?v=4" width="115" alt="Foto de Enzo Abreu"/><br>
+      <sub>
+        <b>Enzo Abreu - RM572995</b>
+      </sub>
+    </td>
+  </tr>
+</table>
 
 ## Créditos
 
