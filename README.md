@@ -94,7 +94,7 @@ A coleção usa `watchlist:v1` para títulos, status, notas e comentários, e `w
 3. Informe seu token no `.env.local`:
 
    ```env
-   VITE_TMDB_ACCESS_TOKEN=seu_api_read_access_token
+   TMDB_ACCESS_TOKEN=seu_api_read_access_token
    ```
 
 4. Inicie o projeto:
@@ -135,7 +135,7 @@ O design adapta as telas em `telas_estaticas/`: superfícies escuras, CTA âmbar
 - Não há autenticação nem sincronização entre navegadores;
 - A coleção pertence apenas ao navegador atual;
 - Provedores de streaming dependem da disponibilidade retornada pelo TMDB para BR;
-- A credencial do TMDB é usada no cliente por ser um projeto acadêmico sem backend.
+- A credencial do TMDB fica somente no servidor por ser um projeto acadêmico sem backend.
 
 ## Uso de IA
 

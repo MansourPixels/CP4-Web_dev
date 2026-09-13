@@ -14,4 +14,4 @@
 
 ## Dados e efeitos
 
-`src/api/tmdb.js` centraliza `fetch`, token Bearer e normalização. As páginas usam `useEffect` para carregar catálogo, busca, detalhe/provedores e temporada. `useMediaLibrary` armazena `watchlist:v1` e `watchlist:episodes:v1` no `localStorage`; cada item contém `id`, `mediaType`, metadados mínimos, `saved`, `favorite`, `watched`, `rating` e `updatedAt`.
+`src/api/tmdb.js` centraliza as chamadas internas `/api/tmdb` e a normalização. A autenticação Bearer ocorre apenas no proxy Vite durante desenvolvimento e na função serverless `api/tmdb/[...path].js` em produção. As páginas usam `useEffect` para carregar catálogo, busca, detalhe/provedores e temporada. `useMediaLibrary` armazena `watchlist:v1` e `watchlist:episodes:v1` no `localStorage`; cada item contém `id`, `mediaType`, metadados mínimos, `saved`, `favorite`, `watched`, `rating` e `updatedAt`.
