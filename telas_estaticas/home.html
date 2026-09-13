@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "inverse-on-surface": "#2e3037",
+          "primary": "#ffc880",
+          "secondary": "#bdf4ff",
+          "secondary-fixed": "#9cf0ff",
+          "error": "#ffb4ab",
+          "on-tertiary-fixed": "#00210b",
+          "primary-container": "#f5a623",
+          "tertiary": "#24f07e",
+          "outline": "#9f8e7a",
+          "on-secondary": "#00363d",
+          "primary-fixed-dim": "#ffb955",
+          "surface-variant": "#33343b",
+          "on-secondary-fixed": "#001f24",
+          "secondary-fixed-dim": "#00daf3",
+          "on-primary-container": "#644000",
+          "surface-container": "#1e1f26",
+          "on-primary-fixed-variant": "#633f00",
+          "surface-container-low": "#191b22",
+          "on-secondary-fixed-variant": "#004f58",
+          "on-primary-fixed": "#291800",
+          "surface-container-highest": "#33343b",
+          "inverse-surface": "#e2e2eb",
+          "on-tertiary": "#003918",
+          "on-primary": "#452b00",
+          "outline-variant": "#524534",
+          "on-tertiary-fixed-variant": "#005226",
+          "inverse-primary": "#835500",
+          "error-container": "#93000a",
+          "surface-tint": "#ffb955",
+          "secondary-container": "#00e3fd",
+          "on-background": "#e2e2eb",
+          "background": "#111319",
+          "primary-fixed": "#ffddb4",
+          "on-surface-variant": "#d7c3ae",
+          "on-tertiary-container": "#005326",
+          "surface-dim": "#111319",
+          "surface-container-lowest": "#0c0e14",
+          "tertiary-fixed": "#62ff96",
+          "on-surface": "#e2e2eb",
+          "tertiary-fixed-dim": "#00e475",
+          "surface-container-high": "#282a30",
+          "on-secondary-container": "#00616d",
+          "surface": "#111319",
+          "tertiary-container": "#00d16b",
+          "on-error": "#690005",
+          "on-error-container": "#ffdad6",
+          "surface-bright": "#373940"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-md": "1rem",
+          "margin-lg": "3.5rem",
+          "gutter-lg": "2rem",
+          "space-xs": "0.25rem",
+          "space-lg": "1.5rem",
+          "margin": "2rem",
+          "gutter-sm": "1rem",
+          "margin-sm": "1rem",
+          "gutter": "1.5rem",
+          "space-xl": "2.5rem",
+          "space-sm": "0.5rem"
+        },
+        "fontFamily": {
+          "headline-xl": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "display-hero-mobile": ["Plus Jakarta Sans"],
+          "body-sm": ["Inter"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "display-hero": ["Plus Jakarta Sans"],
+          "body-md": ["Inter"],
+          "label-lg": ["Inter"],
+          "label-md": ["Inter"],
+          "body-lg": ["Inter"],
+          "headline-xl-mobile": ["Plus Jakarta Sans"],
+          "label-caps": ["Inter"]
+        },
+        "fontSize": {
+          "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "display-hero-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+          "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+          "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+          "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.55)]"><div class="h-16 w-full px-gutter-lg flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-lg flex-shrink-0"><a class="flex items-center gap-space-sm group" data-path="descobrir" href="#"><img alt="Watchlist Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W_sxuE4he6pWeX2_uzITVwTo5HDzbaa_s9sXhDJLT2rT0Q06wfQRqRIZv31HU3p9eKplGLGuMiWBWOgvzOgY6gyUNvyuMwetwsFzFiNieuIQcFq3J1pSYIpaGKvc-G5wM1Bm--J-Rdjzib9RCXYgD8QxzajvCdT6HF6j38YSgqgMK5lWYR49pzQ08HcuPOwZA7YaHpyhpuyH25q0C23tkyi-dBsq1XBCb59jaXtkPYFgwUIMuDo80kig"/><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md tracking-tight text-on-surface">Watchlist</span><span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-primary font-label-caps text-label-caps uppercase tracking-wider">PRO</span></div></a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-label-lg rounded-lg"><a aria-current="page" class="px-space-md py-space-xs transition-colors bg-surface-container-high text-primary font-label-lg rounded-lg" data-path="descobrir" href="#">Descobrir</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="buscar" href="#">Buscar</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="series" href="#">Séries</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="filmes" href="#">Filmes</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-colors inline-flex items-center gap-space-xs" data-path="minha-lista" href="#"><span>Minha Lista</span><span class="px-1.5 py-0.5 rounded-full bg-surface-container text-primary font-label-caps text-label-caps">18</span></a></nav></div><div class="flex-1 max-w-xl mx-space-md hidden md:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant pointer-events-none text-headline-sm">search</span><input class="w-full h-10 pl-11 pr-16 bg-surface-container-low rounded-xl text-on-surface placeholder:text-on-surface-variant/60 font-body-sm text-body-sm focus:outline-none focus:bg-surface-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Buscar filmes, séries, diretores, atores..." type="text"/><div class="absolute right-space-sm flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps pointer-events-none"><span>⌘</span><span>K</span></div></div></div><div class="flex items-center gap-space-md flex-shrink-0"><button class="h-9 px-space-md bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-label-lg text-label-lg rounded-xl flex items-center gap-space-xs transition-all shadow-[0_2px_12px_rgba(245,166,35,0.25)] active:scale-95" type="button"><span class="material-symbols-outlined text-headline-sm">add</span><span class="hidden sm:inline">Adicionar</span></button><button aria-label="Notificações" class="relative w-9 h-9 rounded-xl bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors" type="button"><span class="material-symbols-outlined text-headline-sm">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-xs pl-space-xs"><button class="flex items-center gap-space-xs p-0.5 rounded-full hover:ring-2 hover:ring-primary-container transition-all" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK-b1lGD_tEj2Ec2IYv37RqV3gWKfg69iIBV_g1wK3GU9Ke3HhgmzD08lovodOCsN-23es5m4RcqV79hgpLdDht4_5OTrCA9edcIFQPAjO7SeHfxBU5Fta5E6GvjQu4REWcnResbVHP16QsA92R-pakxka4yQj4IcB6otjRbAhyDVZ3DmqeyhpvR6XrdMhnhfEa1lM5koGTDijVA5-pjI9GAjj7vG-BjkZrG44kTZiM-g8BZ6jZoo"/><span class="material-symbols-outlined text-on-surface-variant text-body-sm hidden sm:block">expand_more</span></button></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-16rem)]"><div class="flex flex-col w-full">
+<!-- Dynamic Atmospheric Ambient Glow -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[480px] bg-primary-container/10 blur-[130px] rounded-full pointer-events-none -z-10"></div>
+<div class="absolute top-96 -left-48 w-[600px] h-[380px] bg-secondary-container/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+<!-- 1. HERO SPOTLIGHT & DISCOVERY SEARCH -->
+<section class="w-full px-gutter-lg pt-space-xl pb-space-lg max-w-7xl mx-auto flex flex-col items-center text-center relative">
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-high text-primary font-label-caps text-label-caps uppercase tracking-wider mb-space-md shadow-sm">
+<span class="material-symbols-outlined text-headline-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span>Temporada de Prêmios &amp; Lançamentos 2024</span>
+</div>
+<h1 class="font-display-hero text-display-hero text-on-surface max-w-4xl tracking-tight mb-space-sm">
+        Descubra sua próxima <span class="text-primary italic font-serif">obsessão</span> cinematográfica.
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-space-xl">
+        Mais de 800 mil filmes e séries catalogados com dados em tempo real da comunidade, críticas editoriais e rastreamento de episódios sem atritos.
+      </p>
+<!-- Advanced Discovery Search Input Bar -->
+<div class="w-full max-w-3xl flex flex-col items-center gap-space-sm">
+<div class="w-full p-1.5 rounded-2xl bg-surface-container-low shadow-xl flex flex-col sm:flex-row items-center gap-space-xs">
+<!-- Type Filter Tabs -->
+<div class="flex items-center bg-surface-container-lowest rounded-xl p-1 w-full sm:w-auto justify-center">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high text-primary font-label-md text-label-md transition-all shadow-sm" type="button">Todos</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" type="button">Filmes</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" type="button">Séries</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-1" type="button">
+<span>Streaming</span>
+<span class="material-symbols-outlined text-body-sm">expand_more</span>
+</button>
+</div>
+<!-- Main Input Field -->
+<div class="relative flex-1 w-full flex items-center">
+<span class="material-symbols-outlined absolute left-space-md text-primary-container text-headline-sm pointer-events-none">search</span>
+<input class="w-full h-12 pl-12 pr-20 bg-transparent text-on-surface placeholder:text-on-surface-variant/50 font-body-md text-body-md focus:outline-none" placeholder="Pesquisar por título, diretor, ator, franquia..." type="text"/>
+<div class="absolute right-space-sm flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps pointer-events-none">
+<span>PRESS</span>
+<kbd class="text-primary font-mono font-bold">↵</kbd>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full sm:w-auto h-12 px-space-lg bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-space-xs transition-all shadow-md active:scale-98" type="button">
+<span>Explorar</span>
+<span class="material-symbols-outlined text-headline-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Fast Trending Discovery Pills -->
+<div class="flex items-center flex-wrap justify-center gap-space-xs pt-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mr-1">Rápido:</span>
+<button class="px-space-sm py-1 rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1 transition-all" type="button">
+<span>🔥</span> Em alta esta semana
+          </button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1 transition-all" type="button">
+<span>🏆</span> Indicados a Prêmios
+          </button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1 transition-all" type="button">
+<span>🍿</span> Maratonas Rápidas
+          </button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1 transition-all" type="button">
+<span>🪐</span> Sci-Fi Distópico
+          </button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1 transition-all" type="button">
+<span>📼</span> Cinema Cult 90s
+          </button>
+</div>
+</div>
+</section>
+<!-- 2. DESTAQUE DA SEMANA (PANORAMIC SPOTLIGHT CARD) -->
+<section class="w-full px-gutter-lg py-space-md max-w-7xl mx-auto">
+<div class="relative w-full rounded-2xl overflow-hidden bg-surface-container-lowest shadow-xl">
+<!-- Backdrop Graphic -->
+<div class="w-full h-[460px] md:h-[500px] bg-cover bg-center" data-alt="Cinematic atmospheric wide shot of Ruptura Severance style sterile futuristic corporate basement corridor with dramatic moody teal fluorescent lighting and deep black shadows conveying mystery and prestige television drama" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsJLBYy-7dYyhLVVEISEB4rkfQJQm_s24LWm0K6zy6vuJuKIFqGWOqrhpNAnc1ZTF2jPxrEmCKMVEpILK76RamKJbsBCYorrwdG8i_qmCbLieeMa_e0_IPODnqgBGuBL5zPiHKeSQffJPyfouBoqrpMOW8ey4yvZR8UMVTAvWBhK-YG1chiX1M0c2GoJXFQRLin_MQntqibwu4szLu_EtvoOBydacRn1ijO_EohvOLoRVnf9Jua0I')">
+<div class="w-full h-full bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 md:via-surface-container-lowest/50 to-transparent flex flex-col justify-end p-space-md md:p-space-xl">
+<div class="max-w-3xl space-y-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps text-label-caps uppercase font-bold tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-body-sm">bolt</span> DESTAQUE DA SEMANA
+                </span>
+<span class="px-space-sm py-0.5 rounded bg-surface-container-high text-secondary-fixed font-label-caps text-label-caps uppercase tracking-wider font-semibold">
+                  Série • Temporada 2 Confirmada
+                </span>
+<div class="flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container-high/90 backdrop-blur-md text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-headline-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">8.9</span>
+<span class="text-on-surface-variant font-normal">(142k avaliações)</span>
+</div>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+                Ruptura (Severance)
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 md:line-clamp-3 max-w-2xl">
+                Mark lidera uma equipe de funcionários de escritório cujas memórias foram cirurgicamente divididas entre sua vida profissional e pessoal. Quando um misterioso colega de trabalho surge fora da empresa, inicia-se uma busca para descobrir a verdade sobre o projeto Lumon.
+              </p>
+<!-- Where to Watch Badges -->
+<div class="flex items-center gap-space-md pt-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Disponível em:</span>
+<div class="flex items-center gap-space-xs">
+<div class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface font-label-caps text-label-caps flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span> Apple TV+
+                  </div>
+<div class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> 4K HDR • Dolby Atmos
+                  </div>
+</div>
+</div>
+<!-- Action Toolbar -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-sm">
+<button class="px-space-lg h-11 rounded-xl bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-label-lg text-label-lg flex items-center gap-space-xs transition-all shadow-md active:scale-95" type="button">
+<span class="material-symbols-outlined text-headline-sm">bookmark_add</span>
+<span>+ Quero Assistir</span>
+</button>
+<button class="px-space-md h-11 rounded-xl bg-surface-container-high hover:bg-surface-variant text-tertiary-fixed font-label-lg text-label-lg flex items-center gap-space-xs transition-all" type="button">
+<span class="material-symbols-outlined text-headline-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Já Assisti</span>
+</button>
+<button aria-label="Adicionar aos Favoritos" class="w-11 h-11 rounded-xl bg-surface-container-high hover:bg-surface-variant text-error hover:text-error flex items-center justify-center transition-all" type="button">
+<span class="material-symbols-outlined text-headline-sm">favorite</span>
+</button>
+<button class="px-space-md h-11 rounded-xl bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg flex items-center gap-space-xs transition-all" type="button">
+<span class="material-symbols-outlined text-headline-sm">play_circle</span>
+<span>Trailer Oficial</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. SEÇÃO TENDÊNCIAS DA SEMANA (TOP TRENDING GRID) -->
+<section class="w-full px-gutter-lg py-space-xl max-w-7xl mx-auto">
+<div class="flex items-center justify-between mb-space-lg">
+<div class="space-y-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-primary">Radar Global</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Tendências da Semana</h3>
+</div>
+<div class="flex items-center gap-space-xs">
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-0.5" href="#">
+            Ver ranking completo
+            <span class="material-symbols-outlined text-body-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- 5-6 Poster Grid Layout -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-gutter">
+<!-- Poster Item 1 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Moody cinematic movie poster for Oppenheimer showcasing Cillian Murphy under dramatic fiery golden nuclear glow with brim hat high contrast deep shadow portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE4vyReV4o8j-rpI5Qkzp56jCCq3JlrgO26vv_OrYArFH-Kbs3E8xFlXfXNZoqvav2P-OUA24B9NKqPYCTipfzsgC2WdKRUTZ9qBu7rnCO4qYJ49DBBNHHLVcF15hwqJ6N_1r9exnQ6bhqwWj6N8bPVnKLZEoZ4JgFNChJ8Hr2B_vRSapQiEbHtcxI7BYQiE8P4lAvrGIo3p3nzn93lAjm4aMYs0Slbi_o4Po653wAUp5Vv-0btKU"/>
+<!-- Score Pill -->
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-surface-container-lowest/85 backdrop-blur-md text-primary font-label-caps text-label-caps font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-body-sm" style="font-variation-settings: 'FILL' 1;">star</span> 8.9
+            </div>
+<!-- Quick Overlay Actions -->
+<div class="absolute inset-x-0 bottom-0 p-2 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-around">
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface flex items-center justify-center transition-colors" title="Quero Assistir" type="button">
+<span class="material-symbols-outlined text-body-sm">bookmark</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-tertiary-container hover:text-on-tertiary text-on-surface flex items-center justify-center transition-colors" title="Marcar como Visto" type="button">
+<span class="material-symbols-outlined text-body-sm">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-error hover:text-on-error text-on-surface flex items-center justify-center transition-colors" title="Favoritar" type="button">
+<span class="material-symbols-outlined text-body-sm">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-space-sm space-y-0.5">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Oppenheimer</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2023 • Filme • Biografia</p>
+</div>
+</div>
+<!-- Poster Item 2 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Cinematic series poster for Shogun TV show featuring feudal Japanese samurai warlord armored silhouette against dark crimson rising sun and stormy atmospheric fog" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBYxRXJMLW3H4Vzr4gphFapSJU_PBzaVORUkcwinnFCtdq0SQprkOgAayaZkJ2ukVdmk3zlN-FnRjY7H6y_R-i-FORu8BzBzFEo9FRwrXS7F_Dcenc4QjFhMoKdHEQy5kq_HB0c-YUOkJXjq4zQEv_4mVO3ChSHhTFlNO-BlGrBGMMTH-4sYmN9zwi1nNvQlo46sr8Rq22xiFKjD6qbAydSZbHe7Cra8hB1SIY5p9ymYB-Xkr7qng"/>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-surface-container-lowest/85 backdrop-blur-md text-primary font-label-caps text-label-caps font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-body-sm" style="font-variation-settings: 'FILL' 1;">star</span> 8.8
+            </div>
+<div class="absolute inset-x-0 bottom-0 p-2 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-around">
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-body-sm">bookmark</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-tertiary-container hover:text-on-tertiary text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-body-sm">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-error hover:text-on-error text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-body-sm">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-space-sm space-y-0.5">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Xógun: A Gloriosa Saga</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2024 • Série • Drama Histórico</p>
+</div>
+</div>
+<!-- Poster Item 3 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Surreal high fashion editorial movie poster for Poor Things featuring Emma Stone with whimsical theatrical makeup and rich oil painting aesthetic with Victorian textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNXz9QiPcA17HO0IXgSonU-e7OiXDf1g7sxM5AmB8yffE9ECwdQM3w0gIJuvIXlVqIuVZkcxK33Imke0qfD4_Lzyu55TQYClnteTT2pcHd6XR8l23l6xBqUNS-JvJXt_7qrL7TGQCGBaZALRCQdVsUeRP2SCj0YRBIwxtQrvPymYzsZoeBhPS7UE41yaK4Ptrg7exdQjfcXKh7OIZjUMCS3X6xlQrUn-5EdO5ZbtDibg36ldJZQAo"/>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-surface-container-lowest/85 backdrop-blur-md text-primary font-label-caps text-label-caps font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-body-sm" style="font-variation-settings: 'FILL' 1;">star</span> 8.4
+            </div>
+<div class="absolute inset-x-0 bottom-0 p-2 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-around">
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-body-sm">bookmark</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-tertiary-container hover:text-on-tertiary text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-body-sm">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-error hover:text-on-error text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-body-sm">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-space-sm space-y-0.5">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Pobres Criaturas</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2023 • Filme • Fantasia Cômica</p>
+</div>
+</div>
+<!-- Poster Item 4 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Sophisticated cinematic series poster for Succession Roy family members posing coldly in opulent glass corporate penthouse boardroom with subtle amber warm reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTr6wqdnXMc6284BGH2k0CHstAUU-N0CI1m7KeX_h6hwsrcU5V_uPmEX9RnkSc4Zr-urp13p7CgzkGWzn-CiH9EOeO8NSo42xJP6mfkvDlgaHMPpWLaXISyruN6eAjErT2X_dD3YnBZBYZoDV1aM0EwDRCNc8MxCSSyhWLHE3mXWuMQpK28NqRaptjuypLpYjqMgbJ3O4wCPlqQr5j7RkkqZv7wk8ZwU2aGi7G-eION5qKwV4KNjk"/>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-surface-container-lowest/85 backdrop-blur-md text-primary font-label-caps text-label-caps font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-body-sm" style="font-variation-settings: 'FILL' 1;">star</span> 9.0
+            </div>
+<div class="absolute inset-x-0 bottom-0 p-2 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-around">
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-body-sm">bookmark</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-tertiary-container hover:text-on-tertiary text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-body-sm">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-error hover:text-on-error text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-body-sm">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-space-sm space-y-0.5">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Succession</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2023 • Série • Drama Corporativo</p>
+</div>
+</div>
+<!-- Poster Item 5 -->
+<div class="group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-[2/3] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Chilling French courtroom thriller poster Anatomy of a Fall showing a snowy chalet in the French Alps with intense judicial mystery atmosphere in cold muted blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR73q1CImxz_42EGUxeN5AwiBKv7gYoZaj4RqtPsPUtZ9ZOKr-fXFnOw8CQZ9zUkjhZrEawqM6Ta2ecU9wPk8JhHQnO7umSL7BASCGnicJE-mPQUSpxZDeEbf2ulUYcYFtrLoiP1LHBo94lQjNaS9Ermx7nLUcj9EppI-_99BZ_oAsw7J32ThUeg6x9eAkD3bLQMeFRDqI6Uxm54WnE09BUQyeCDqmxsG-ms8ljtfgzPMZ6cfRHs4"/>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-surface-container-lowest/85 backdrop-blur-md text-primary font-label-caps text-label-caps font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-body-sm" style="font-variation-settings: 'FILL' 1;">star</span> 8.2
+            </div>
+<div class="absolute inset-x-0 bottom-0 p-2 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-around">
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-body-sm">bookmark</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-tertiary-container hover:text-on-tertiary text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-body-sm">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-error hover:text-on-error text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-body-sm">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-space-sm space-y-0.5">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Anatomia de uma Queda</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2023 • Filme • Mistério Jurídico</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. SEÇÃO FILMES POPULARES (EDITORIAL ROWS & RUNTIMES) -->
+<section class="w-full px-gutter-lg py-space-md max-w-7xl mx-auto">
+<div class="flex items-center justify-between mb-space-lg">
+<div>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-primary">Catálogo Curado</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Filmes Populares do Momento</h3>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors" type="button">Mais Votados</button>
+<button class="px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" type="button">Recentes</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-gutter">
+<!-- Film Card 1 -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col justify-between shadow-sm hover:bg-surface-container transition-colors">
+<div class="relative aspect-[2/3] w-full rounded-lg overflow-hidden bg-surface-container-lowest mb-space-sm">
+<img class="w-full h-full object-cover" data-alt="Epic sci-fi desert landscape poster for Dune Part Two with Paul Atreides and Chani wearing stillsuits overlooking massive glowing orange sand dunes under blazing sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlmXk9jXf96eBsroAgBGc3ZTuzeQxqrT4618G4JR7yL78B_k1voY6VE2yipESUN1MLwFNfBrpf6jLBtiZnpkoowviiPNZaCZucb0mcYftcOMwUDE8K9zpgNXGT2Ikt8Hl11G7sAFNp49E_Tc9R1xq9-Gy-vP0_S5qZNGiEHlibGxDpEytoKF-p0dTQNt5232uxlKJW0zKBS_-au1pN5fbdq4yiPFsVlpKLtCV0AVqJleqxnAuoQ3o"/>
+<span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-secondary font-label-caps text-label-caps">2h 46m</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">2024 • Denis Villeneuve</span>
+<div class="flex items-center text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-body-sm" style="font-variation-settings: 'FILL' 1;">star</span> 8.8
+              </div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Duna: Parte 2</h4>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">Sci-Fi</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">Aventura</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md">
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-body-sm">bookmark</span> Lista
+            </button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary transition-colors" title="Já Assisti" type="button">
+<span class="material-symbols-outlined text-headline-sm">check_circle</span>
+</button>
+</div>
+</div>
+<!-- Film Card 2 -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col justify-between shadow-sm hover:bg-surface-container transition-colors">
+<div class="relative aspect-[2/3] w-full rounded-lg overflow-hidden bg-surface-container-lowest mb-space-sm">
+<img class="w-full h-full object-cover" data-alt="Challengers movie poster featuring Zendaya wearing stylish tennis glasses reflecting match drama in high saturation cinema aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTU--mSxnURTy7utrE175sjcgVrlRU0nk9_C2W1xVsE513ZOsLWVsgIKXlcFalrXZIQN2FWxefjSqFNegqYesC_r8aRC6xLP377I_W5aNSh5KDFF6CCiRnsp6EjW1rrX_AhFyAyaUMfVpGf4sByh2MdlxaWo2d842Xwbnyfa9VR2bFuZebTmkQQ150rJ10nuoYgwpoYzV3iugrkEXqd470sq22l9Qjk6xYA7GYEAYaAAYvgIknGAU"/>
+<span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-secondary font-label-caps text-label-caps">2h 11m</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">2024 • Luca Guadagnino</span>
+<div class="flex items-center text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-body-sm" style="font-variation-settings: 'FILL' 1;">star</span> 7.7
+              </div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Rivais (Challengers)</h4>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">Drama</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">Romance</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md">
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-body-sm">bookmark</span> Lista
+            </button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-headline-sm">check_circle</span>
+</button>
+</div>
+</div>
+<!-- Film Card 3 -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col justify-between shadow-sm hover:bg-surface-container transition-colors">
+<div class="relative aspect-[2/3] w-full rounded-lg overflow-hidden bg-surface-container-lowest mb-space-sm">
+<img class="w-full h-full object-cover" data-alt="Chilling historical holocaust drama poster The Zone of Interest showing peaceful family garden bathed in sunlight juxtaposed against menacing smoke tower in muted cinematic palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfPTMPAe4Hs9qx6_rb2zodejufuNQB5ffdjBwEtsRvm90FszADTomAvpQ5ht4YENMnFgImND9-jGSYHMRX1xUOn-PrvQweyEA1ZH00iWVJS1wMPHQBYC-XUiIJEnWWa1y_dFESHvb6MaPMnlWXPdsfgSzDNqUdd82qfREgbLH3NFX7QD_kb66i17QlnRgjD9X7BwVfVVgX2gqDJ4gfghVJoa-Qtg1zK3c-3aBmFcfYzGPs7S5slI4"/>
+<span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-secondary font-label-caps text-label-caps">1h 45m</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">2023 • Jonathan Glazer</span>
+<div class="flex items-center text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-body-sm" style="font-variation-settings: 'FILL' 1;">star</span> 8.0
+              </div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Zona de Interesse</h4>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">Guerra</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">História</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md">
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-body-sm">bookmark</span> Lista
+            </button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-headline-sm">check_circle</span>
+</button>
+</div>
+</div>
+<!-- Film Card 4 -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col justify-between shadow-sm hover:bg-surface-container transition-colors">
+<div class="relative aspect-[2/3] w-full rounded-lg overflow-hidden bg-surface-container-lowest mb-space-sm">
+<img class="w-full h-full object-cover" data-alt="Post apocalyptic action film poster Furiosa Mad Max Saga with Anya Taylor Joy covered in engine grease holding a rifle under blistering red desert sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFLRo8gntv77lGBXM8OGScQIQBXU-PPJRpCb7Ryd_DCmoYgkv5q-wqb61tPjK3o5YimWtbdmXfqxc1jHRKTtshnCaJchoB99iBdAZBuJ2yz_BVog4zjWkaYVNyEprQQhLbQ46xChTqSJeuc_wZV9MsfxMqKxWvpKXHUXqJ8oSuu8X46IQ5A78Rp5Yvm0dYESA8pocqW8Op3VX4_WOaJrh-Pf22Xm7dI7W51V8-0qA0fInbRxI-dkU"/>
+<span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-secondary font-label-caps text-label-caps">2h 28m</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">2024 • George Miller</span>
+<div class="flex items-center text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-body-sm" style="font-variation-settings: 'FILL' 1;">star</span> 7.8
+              </div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Furiosa: Mad Max</h4>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">Ação</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">Sci-Fi</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md">
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-body-sm">bookmark</span> Lista
+            </button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-headline-sm">check_circle</span>
+</button>
+</div>
+</div>
+<!-- Film Card 5 -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col justify-between shadow-sm hover:bg-surface-container transition-colors">
+<div class="relative aspect-[2/3] w-full rounded-lg overflow-hidden bg-surface-container-lowest mb-space-sm">
+<img class="w-full h-full object-cover" data-alt="Poetic Japanese slice of life film poster Perfect Days featuring elderly man looking peacefully up into Tokyo tree leaves through sunbeams warm gentle green hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcAsgs02onvgsqfTZqVDgIVCBY-uO1YO5BDsgO8SD_NE1nwp3M5EWIoEUGoG6gn8TQ4mtYQHhJ8Mcp2w5EdZtK7cNY-7HgLhyVCnhH7E28imC9UeoTadu0DyeOI9irBEZOSRUVfoBKXXArO20bgS79ceeyCJd8Mar2bY594MlcZ8IY6RrV6Gwa7Km-_xHG8ROmiXrmCu75hMlDWf2AG2vpRSzqiw5FYC-NwzSU51Cy2mWk9uj6LfQ"/>
+<span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-secondary font-label-caps text-label-caps">2h 04m</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">2023 • Wim Wenders</span>
+<div class="flex items-center text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-body-sm" style="font-variation-settings: 'FILL' 1;">star</span> 8.3
+              </div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Dias Perfeitos</h4>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">Drama</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">Poético</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md">
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-body-sm">bookmark</span> Lista
+            </button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-headline-sm">check_circle</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. SEÇÃO SÉRIES PARA MARATONAR (TRACKING & EPISODE PROGRESS) -->
+<section class="w-full px-gutter-lg py-space-xl max-w-7xl mx-auto">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-lg">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-headline-sm">track_changes</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-tertiary">TV Time Sync</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Séries Para Maratonar</h3>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1 rounded-xl">
+<button class="px-space-md py-1 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md" type="button">Continuando</button>
+<button class="px-space-md py-1 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md" type="button">Recomendadas</button>
+</div>
+</div>
+<!-- TV Shows with Progress Indicator -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- TV Tracker Card 1 -->
+<div class="bg-surface-container-low rounded-2xl p-space-md flex flex-col justify-between shadow-md hover:bg-surface-container transition-all">
+<div class="flex gap-space-md">
+<div class="w-20 aspect-[2/3] rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="The Bear television series poster featuring Carmy in messy kitchen surrounded by culinary chaos and intense moody blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYbMZpuRJjLrktri3ZQgl6DuRVeZHc7r2Dz3KNT7mnjGrSwtqDb114z9U8io65pA8knGUEtojfJJM5IhvOVFLaMlZ6RmPKgt706o_wD_Om5zpjkCOzHYSSC48YtytqIdCDo4BLw5zRVsDlIyGRxATlU4KU1yjoLq7I-HyHqZLXWJf_OexBQMZ5kQwVLfc1RvPYMI9N7Yk9GMKCsyBSS-Fiz_dooGHpADWLk7UXch-XkVDtoXvU-oA"/>
+</div>
+<div class="flex-1 min-w-0 space-y-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-caps text-label-caps">3 Temporadas • 28 eps</span>
+<span class="text-primary font-label-caps text-label-caps font-bold">★ 8.7</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">O Urso (The Bear)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Próximo: S03E01 "Tomorrow"</p>
+</div>
+</div>
+<!-- Progress Bar & Actions -->
+<div class="mt-space-md pt-space-sm space-y-space-sm">
+<div class="space-y-1">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant">
+<span>Progresso: 18 de 28 episódios</span>
+<span class="text-tertiary">64%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 64%"></div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-1">
+<button class="flex-1 py-2 px-space-sm rounded-xl bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-body-sm">check</span>
+<span>+ Próximo Episódio</span>
+</button>
+<button class="p-2 rounded-xl bg-surface-container-high hover:bg-surface-variant text-on-surface-variant" title="Opções da Série" type="button">
+<span class="material-symbols-outlined text-headline-sm">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- TV Tracker Card 2 -->
+<div class="bg-surface-container-low rounded-2xl p-space-md flex flex-col justify-between shadow-md hover:bg-surface-container transition-all">
+<div class="flex gap-space-md">
+<div class="w-20 aspect-[2/3] rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Poster for House of the Dragon season 2 showing Queen Rhaenyra Targaryen with silver hair and golden crown illuminated by dragon fire glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-eXCLXP4fzIkzlEVJjxSMQQEh_pEU2qmcRwa4FXyNNDmiDZiixP1WqkYBm9B0X4TtlJrLosRvZh-uKSgxhMqt0F2mAtpgIrh5LYFkdj6C7Ht_BTbdk9oqVfzJJvobk2IECrfBsWXfRIqt86hDFVElHCmCWuu2pXod3SLOGpwus7zGn0wuITD1ZX4iMTIMt0h3ikr265GWRafozxz1SzBYSj4RKvaNfBBwaCIAe5-LiJ3brWapFMY"/>
+</div>
+<div class="flex-1 min-w-0 space-y-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-caps text-label-caps">2 Temporadas • 18 eps</span>
+<span class="text-primary font-label-caps text-label-caps font-bold">★ 8.5</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">A Casa do Dragão</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Próximo: S02E04 "The Red Dragon"</p>
+</div>
+</div>
+<!-- Progress Bar & Actions -->
+<div class="mt-space-md pt-space-sm space-y-space-sm">
+<div class="space-y-1">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant">
+<span>Progresso: 13 de 18 episódios</span>
+<span class="text-tertiary">72%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 72%"></div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-1">
+<button class="flex-1 py-2 px-space-sm rounded-xl bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-body-sm">check</span>
+<span>+ Próximo Episódio</span>
+</button>
+<button class="p-2 rounded-xl bg-surface-container-high hover:bg-surface-variant text-on-surface-variant" title="Opções da Série" type="button">
+<span class="material-symbols-outlined text-headline-sm">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- TV Tracker Card 3 -->
+<div class="bg-surface-container-low rounded-2xl p-space-md flex flex-col justify-between shadow-md hover:bg-surface-container transition-all">
+<div class="flex gap-space-md">
+<div class="w-20 aspect-[2/3] rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Post apocalyptic television series poster Fallout showing vault dweller girl in signature yellow and blue jumpsuit standing beside giant T60 power armor helmet in desert waste" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRLoqLRYiCd0hcLqP-P-AItbzUEbgR9hgIIyvCINydUhxXx_Amd4dm1gHCWT4vT8dKVTkA9U1AN92gDHibzlko6vE9h0VjsO8e-GTDlQJZ5nCQMuoVdW9sx8ozfBbbiDl3jCx7lmdkp3HW_fJPlS26wWNSlCog9L-wPV4Q8nnTxGQApMLcAgdfASicK9nk1yvPRiDwhLeg7yGysjm461s51fLdWmb3Mc9dABTHDsh1ujzkuGwAUZE"/>
+</div>
+<div class="flex-1 min-w-0 space-y-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-caps text-label-caps">1 Temporada • 8 eps</span>
+<span class="text-primary font-label-caps text-label-caps font-bold">★ 8.4</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Fallout</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Próximo: S01E06 "The Trap"</p>
+</div>
+</div>
+<!-- Progress Bar & Actions -->
+<div class="mt-space-md pt-space-sm space-y-space-sm">
+<div class="space-y-1">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant">
+<span>Progresso: 5 de 8 episódios</span>
+<span class="text-tertiary">62%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 62%"></div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-1">
+<button class="flex-1 py-2 px-space-sm rounded-xl bg-surface-container-high hover:bg-primary-container hover:text-on-primary-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-body-sm">check</span>
+<span>+ Próximo Episódio</span>
+</button>
+<button class="p-2 rounded-xl bg-surface-container-high hover:bg-surface-variant text-on-surface-variant" title="Opções da Série" type="button">
+<span class="material-symbols-outlined text-headline-sm">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. SEÇÃO LISTAS DA COMUNIDADE (LETTERBOXD-STYLE CURATION) -->
+<section class="w-full px-gutter-lg py-space-xl mb-space-xl max-w-7xl mx-auto">
+<div class="flex items-center justify-between mb-space-lg">
+<div>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-primary">Curadoria Cinéfila</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Listas Populares da Comunidade</h3>
+</div>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md flex items-center gap-1 transition-colors" type="button">
+<span>Criar Nova Lista</span>
+<span class="material-symbols-outlined text-body-sm">add</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- List Card 1 -->
+<a class="group p-space-md rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all shadow-md flex flex-col justify-between" href="#">
+<div>
+<!-- Layered Mini Posters Mosaic -->
+<div class="flex items-center -space-x-4 mb-space-md overflow-hidden pt-2 pl-2">
+<div class="w-16 aspect-[2/3] rounded-lg overflow-hidden shadow-lg transform -rotate-6 group-hover:-rotate-12 transition-transform bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Miniature movie poster of 2001 A Space Odyssey showing monolithic star child and space station in deep void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGX0ZTAHL51aLvlEDjMH5gIS5bNUDdtcOGXrlT2GtBMLkY7QSy6o8NOFG1lQyMhh1wRhHaAE0MCyy-aBhd5YWnhVZrZ31iiJGMPWqWZxFe2OZB_tF_oFgYYVo-Ql7adcAcIfUTxB2GLzrL1xmAmWfdPpNtnMtkpL24qwXVpJijLz5Fr1bNqh0BoiEIDudzkk5nNrgbBDsCG37uP6v5hqxJnJWPMvT276AtQZ99Lq_V-tSeTLDNYH4"/>
+</div>
+<div class="w-16 aspect-[2/3] rounded-lg overflow-hidden shadow-lg transform rotate-2 group-hover:rotate-0 transition-transform bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Miniature movie poster of Blade Runner 2049 with futuristic neon orange flying car and drenched city" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApjpoWrExwXPrzJ6_V1zClCu6xo1_ZzJHxG8a7L7x-t7w2Wd6Jj0iDecE0cQaOBEbTRXM-VhwbrFdJMV3XdtOY91w-HYu-dmdVEG3wZ3gIwCu8HdDHQZy9NmmKbNf-IH1jmZ91cM6gDQ-GOrEUGbdsvd15zFoz90CP9x8qoCXQ0R5UIRsFo6YXPVfR5CZLVCNtJOUNpka-Za-ZdN-lRqXDqeDAll6GXZp-NN7VK2oLyIHljSaPmx0"/>
+</div>
+<div class="w-16 aspect-[2/3] rounded-lg overflow-hidden shadow-lg transform rotate-6 group-hover:rotate-12 transition-transform bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Miniature movie poster of Interstellar showing endurance astronaut standing on shallow water world" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG6WmM9VdawDsSNAfIm-BrcjUl7RRDHRkM9KZ2vcr17d067H6hLQw3thu2YFgQD7Jxulc6Tw6RhytR-zqzKLqBr1bKI1kndm7Z3JqAO5T7u5-GjQ8gNVjQAjKN0IJZ3owEvLIviuY593eLytXuawJUwFDDrzZccEW3Shpi_HpDlilhZII4q3CBtY4blrGmiwMURWwPYhbrL_Gx7GR6DBv85frgf0sRT6h5D0_vPKVaOm4RvHqwnP4"/>
+</div>
+<div class="w-16 aspect-[2/3] rounded-lg overflow-hidden shadow-lg flex items-center justify-center bg-surface-container-high text-primary font-label-caps text-label-caps">
+                +97
+              </div>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors mb-1">
+              100 Melhores Sci-Fi do Século XXI
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+              Do cyberpunk claustrofóbico às odisseias cósmicas existenciais. Obras essenciais que redefiniram o gênero nas últimas décadas.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-primary text-label-caps font-bold">M</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Por @marcoscine</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-caps text-label-caps">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-body-sm text-error">favorite</span> 4.2k</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-body-sm">chat_bubble</span> 184</span>
+</div>
+</div>
+</a>
+<!-- List Card 2 -->
+<a class="group p-space-md rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all shadow-md flex flex-col justify-between" href="#">
+<div>
+<div class="flex items-center -space-x-4 mb-space-md overflow-hidden pt-2 pl-2">
+<div class="w-16 aspect-[2/3] rounded-lg overflow-hidden shadow-lg transform -rotate-6 group-hover:-rotate-12 transition-transform bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Miniature movie poster of Chinatown Jack Nicholson fedora shadow noir mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAspcJLEiXEEgOeDfViT6p3DY2JNclgcTIGBGUw8xKmsY3us3qXURoo5hA9lUUea29IsGApM3E8b3rFuECGC1jP4hhj9OZ9_6TREaLWjGPQ3vNBkz1CGk_w1bzpISIPXAIcd6L0-G35K3bD-u9aDrhWiZb-AN7MX5FsQ8rC3cEarQYiztalp8cYmA98W8i5ffzJdspSBDwqhOf5pyjvN0qUEO194jDtwCegBdWMVcV-yBeyxJbJnD8"/>
+</div>
+<div class="w-16 aspect-[2/3] rounded-lg overflow-hidden shadow-lg transform rotate-2 group-hover:rotate-0 transition-transform bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Miniature movie poster of Drive Ryan Gosling satin scorpion jacket neon pink" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcn9Say2Z8jVZhLabHFA7rktDHyO77ayIisM7d8Vf_5Yqv4cL31XGArc06lNiaCVFIehcZTJP1w55mfgoOhpDiJssZyBs1Zlv7en2brwN7fkO3s5_8hBWpTL40DCeHplA_yvQkK6uq-h524JBDq6hay-rcTjDHQyDnWTTwzpsz8jhrPoubhuKav2n7ar2-h1QY1nE5gHwkn9u6ogvMtwfSGv6NTOmWGRwfKKuCP4K3N_HmC7KUcV4"/>
+</div>
+<div class="w-16 aspect-[2/3] rounded-lg overflow-hidden shadow-lg transform rotate-6 group-hover:rotate-12 transition-transform bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Miniature movie poster of The Batman Robert Pattinson dark rain soaked Gotham silhouette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTdGTUs-bftxq7yaUouGuvvw3xYJRfEhi6BEl-PL9RhIJG9gCvAg83LPJ_h3xxmh7kF3jMHegGdB9d85Qbi_lK3-yNFWJzsLJk1ZCdjKuN61-37moZ7du-WcYtr2RYEDWHJ8mwyot0JtqBZVZLGAdmlABI1Tp4_TuWJ5KMHkqA28iyGaabwXWKmN-OfXoT_9rOT6UcDPVlqsHMQ92QWWqtxZ_niBzXji1EA4vl81gnXrD6i1qJ9Rs"/>
+</div>
+<div class="w-16 aspect-[2/3] rounded-lg overflow-hidden shadow-lg flex items-center justify-center bg-surface-container-high text-primary font-label-caps text-label-caps">
+                +42
+              </div>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors mb-1">
+              Cinema Neo-Noir Moderno
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+              Ruas molhadas, fumaça de cigarro iluminada por neon e moralidade em tons de cinza. Detetives desencantados e corrupção sistêmica.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-secondary text-label-caps font-bold">L</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Por @leticiacritica</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-caps text-label-caps">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-body-sm text-error">favorite</span> 2.8k</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-body-sm">chat_bubble</span> 92</span>
+</div>
+</div>
+</a>
+<!-- List Card 3 -->
+<a class="group p-space-md rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all shadow-md flex flex-col justify-between" href="#">
+<div>
+<div class="flex items-center -space-x-4 mb-space-md overflow-hidden pt-2 pl-2">
+<div class="w-16 aspect-[2/3] rounded-lg overflow-hidden shadow-lg transform -rotate-6 group-hover:-rotate-12 transition-transform bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Miniature movie poster of Amelie Poulain smiling warmly in red and green Parisian photo booth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCbWdIJuN2DszW9O77Etej02X5mnWM8Q8sxb5BzGUyjmx5i6Nnb8yqirXHJzt2PxxmjVdHKJfL7jTd3gHf3fKfiyvObhi4gCgNH88w2Zd-d0V6fRqxi3kzJ_j7HprUyrofZwvCbl5-My96eiWR7boI41BPHpQHuqsxwcNEGvQgmDdOsHL3mUY0yJeHdg-5UCrh4v9HelJ5XO2aZYDltlb5a0RrIJ9W-blFwDeOo4A3QEQqTa2mVOM"/>
+</div>
+<div class="w-16 aspect-[2/3] rounded-lg overflow-hidden shadow-lg transform rotate-2 group-hover:rotate-0 transition-transform bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Miniature movie poster of Lost in Translation Bill Murray and Scarlett Johansson on Tokyo bed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEyjkxi7if-4NxtY0NCIDmd0nnCV9CBybK0JUe_h-yoQEQ_sOqwu5HRmQT81iDO05sTt1Uso7hc_CGWAQ5Ks7cnoGFWikHucnMs1IHIzvUgW9yh5pMzV3PQ4E-nERE2pf-xLVsny1BB9YCNHfy93IFtTDWkzcwPUcywWwKMtfM2HKO0v0YNKnETfDlKA7_0TYQoNsH4D__Tmz4X80IN_IFSFYo3RPoGhHtJrKcD2FNw77fC8IElX0"/>
+</div>
+<div class="w-16 aspect-[2/3] rounded-lg overflow-hidden shadow-lg transform rotate-6 group-hover:rotate-12 transition-transform bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Miniature movie poster of Midnight in Paris Owen Wilson walking on wet Seine bridge at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ9bvLInGJ6QWj0cLDkB72mdmxedMAW4Poab8774DTHgpF7K5QaH28SbsWBzdwRtdaGOvJeUSWjXEpcJK5iCDgPUUAD15Yp_TPHfuricoe-G3nMYl4l4suqDPZBtdo3dXN_az6u8aEi_mBC7oqo2Kpc4gefuZQnzFHdOFvJami2NJI5jKkDz7dOAqDPiXZcFpsGQdsDRD8MRGXz6H8n-XtsPQrcnkGN7rJcPByEBIqy1Pzk19Y23o"/>
+</div>
+<div class="w-16 aspect-[2/3] rounded-lg overflow-hidden shadow-lg flex items-center justify-center bg-surface-container-high text-primary font-label-caps text-label-caps">
+                +29
+              </div>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors mb-1">
+              Para Assistir Num Domingo Chuvoso
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+              Filmes aconchegantes, melancólicos ou doces que funcionam como uma xícara quente de café e uma manta confortável.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-primary text-label-caps font-bold">C</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Por @clube_cinema</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-caps text-label-caps">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-body-sm text-error">favorite</span> 6.1k</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-body-sm">chat_bubble</span> 312</span>
+</div>
+</div>
+</a>
+</div>
+</section>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest"><div class="w-full px-gutter-lg py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter-lg mb-space-xl"><div class="lg:col-span-2 space-y-space-md"><div class="flex items-center gap-space-sm"><img alt="Watchlist Brand Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W_sxuE4he6pWeX2_uzITVwTo5HDzbaa_s9sXhDJLT2rT0Q06wfQRqRIZv31HU3p9eKplGLGuMiWBWOgvzOgY6gyUNvyuMwetwsFzFiNieuIQcFq3J1pSYIpaGKvc-G5wM1Bm--J-Rdjzib9RCXYgD8QxzajvCdT6HF6j38YSgqgMK5lWYR49pzQ08HcuPOwZA7YaHpyhpuyH25q0C23tkyi-dBsq1XBCb59jaXtkPYFgwUIMuDo80kig"/><span class="font-headline-md text-headline-md tracking-tight text-on-surface">Watchlist</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">O ecossistema definitivo para cinéfilos e colecionadores de televisão. Acompanhe episódios, avalie obras e compartilhe suas paixões cinematográficas.</p><div class="flex items-center gap-space-lg pt-space-xs"><div class="space-y-0.5"><div class="font-headline-sm text-headline-sm text-primary">14.2M</div><div class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Títulos Catalogados</div></div><div class="space-y-0.5"><div class="font-headline-sm text-headline-sm text-tertiary">4.8M</div><div class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Cinéfilos Ativos</div></div></div></div><div class="space-y-space-sm"><div class="font-label-lg text-label-lg text-on-surface font-semibold uppercase tracking-wider">Explorar</div><ul class="space-y-space-xs font-body-sm text-body-sm"><li class="text-on-surface-variant hover:text-on-surface cursor-pointer transition-colors">Em Cartaz</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer transition-colors">Mais Bem Avaliados</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer transition-colors">Temporada de Prêmios</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer transition-colors">Listas da Comunidade</li></ul></div><div class="space-y-space-sm"><div class="font-label-lg text-label-lg text-on-surface font-semibold uppercase tracking-wider">Plataforma</div><ul class="space-y-space-xs font-body-sm text-body-sm"><li class="text-on-surface-variant hover:text-on-surface cursor-pointer transition-colors">API de Cinema</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer transition-colors">Sobre Nós</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer transition-colors">Comunidade</li><li class="text-on-surface-variant hover:text-on-surface cursor-pointer transition-colors">Termos e Privacidade</li></ul></div><div class="space-y-space-md"><div class="font-label-lg text-label-lg text-on-surface font-semibold uppercase tracking-wider">Preferências</div><div class="space-y-space-sm"><div class="flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm"><span class="material-symbols-outlined text-headline-sm text-primary">language</span><span>Português (Brasil)</span></div><div class="flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm"><span class="material-symbols-outlined text-headline-sm text-primary">dark_mode</span><span>Modo Escuro (Cinema)</span></div></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Watchlist Inc. Dados de cinema e televisão fornecidos por catálogo aberto sob licença editorial.</p><div class="flex items-center gap-space-md text-on-surface-variant font-body-sm text-body-sm"><span class="cursor-pointer hover:text-on-surface transition-colors">Status dos Servidores</span><span>•</span><span class="cursor-pointer hover:text-on-surface transition-colors">Diretrizes da Comunidade</span><span>•</span><span class="cursor-pointer hover:text-on-surface transition-colors">Cookies</span></div></div></div></footer></body></html>
