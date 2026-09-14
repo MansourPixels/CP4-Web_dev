@@ -4,7 +4,8 @@ export default async function handler(request, response) {
   const token = process.env.TMDB_ACCESS_TOKEN
   if (!token) return response.status(500).json({ message: 'TMDB_ACCESS_TOKEN não foi configurado no servidor.' })
 
-  const segments = Array.isArray(request.query.path) ? request.query.path : [request.query.path]
+  const rawPath = Array.isArray(request.query.path) ? request.query.path.join('/') : request.query.path
+  const segments = String(rawPath || '').split('/').filter(Boolean)
   if (!segments.every(Boolean)) return response.status(400).json({ message: 'Caminho TMDB inválido.' })
 
   const query = new URLSearchParams()
