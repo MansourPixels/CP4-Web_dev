@@ -1,0 +1,7 @@
+import { ArrowLeft, House, SearchX } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
+
+export default function NotFoundPage() {
+  const navigate = useNavigate()
+  return <section className="page flex min-h-[calc(100vh-4rem)] items-center justify-center"><div className="panel w-full max-w-xl p-8 text-center sm:p-12"><div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-amber/15 text-amber"><SearchX size={32} aria-hidden="true" /></div><p className="mt-7 text-sm font-bold uppercase tracking-[0.2em] text-amber">Erro 404</p><h1 className="mt-3 font-display text-3xl font-extrabold text-ink sm:text-4xl">Esta página saiu de cartaz</h1><p className="mx-auto mt-4 max-w-md leading-7 text-muted">Não encontramos o conteúdo que você tentou acessar. Você pode voltar para a página anterior ou descobrir novos títulos.</p><div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><button type="button" onClick={() => navigate(-1)} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-elevated px-5 font-bold text-ink transition hover:bg-white/15"><ArrowLeft size={18} aria-hidden="true" />Voltar</button><Link to="/" className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-amber px-5 font-bold text-canvas transition hover:bg-yellow-300"><House size={18} aria-hidden="true" />Ir para o início</Link></div></div></section>
+}
