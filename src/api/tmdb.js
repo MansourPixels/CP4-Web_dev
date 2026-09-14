@@ -11,7 +11,11 @@ async function get(path, params = {}) {
 }
 
 export const image = (path, backdrop = false) => path ? `${backdrop ? BACKDROP_URL : IMAGE_URL}${path}` : null
-export const mediaType = (item) => item.media_type === "movie" || item.title ? "movie" : "tv"
+export const mediaType = (item) => {
+  if (item.mediaType === "movie" || item.mediaType === "tv") return item.mediaType
+  if (item.media_type === "movie" || item.media_type === "tv") return item.media_type
+  return item.title ? "movie" : "tv"
+}
 export const titleOf = (item) => item.title || item.name || "Título sem nome"
 export const dateOf = (item) => item.release_date || item.first_air_date || ""
 
