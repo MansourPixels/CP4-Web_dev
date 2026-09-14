@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight, } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { tmdb } from '../api/tmdb'
 import { MediaGrid } from '../components/MediaCard'

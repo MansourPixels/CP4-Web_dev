@@ -19,7 +19,7 @@ export default function SearchPage({ library }) {
     }, 400)
     return () => clearTimeout(timer)
   }, [query, setParams])
-  return <div className="page"><h1 className="font-display text-3xl font-extrabold">Buscar</h1><label className="relative mt-6 block max-w-2xl"><span className="sr-only">Termo de busca</span><Search className="absolute left-4 top-3.5 text-muted" size={20} /><input autoFocus value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Filmes, séries, atores..." className="h-12 w-full rounded-xl border border-white/10 bg-surface pl-12 pr-4" /></label>
+  return <div className="page"><h1 className="font-display text-3xl font-extrabold">Buscar</h1><label className="relative mt-6 block max-w-2xl"><span className="sr-only">Termo de busca</span><Search className="absolute left-4 top-3.5 text-muted" size={20} /><input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Filmes, séries, atores..." className="h-12 w-full rounded-xl border border-white/10 bg-surface pl-12 pr-4" /></label>
     {error ? <ErrorMessage message={error} /> : query && <MediaGrid title={loading ? 'Buscando...' : `${results.length} resultados para “${query}”`} items={results} library={library} loading={loading} />}
     {!query && <p className="mt-10 text-muted">Digite um título para começar a explorar o catálogo.</p>}
     {query && !loading && !results.length && !error && <p className="mt-10 text-muted">Nenhum filme ou série encontrado.</p>}
