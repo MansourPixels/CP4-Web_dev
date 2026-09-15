@@ -107,6 +107,31 @@ Acesse a URL mostrada pelo Vite, normalmente `http://localhost:5173`.
 
 > Não envie `.env.local` ao repositório. Na Vercel, cadastre a mesma variável nas configurações do projeto.
 
+## Deploy na Vercel
+
+A aplicação está publicada na **Vercel** e pode ser acessada diretamente pelo link:
+
+👉 **https://cp4-webdev-eta.vercel.app**
+
+### Como a publicação foi feita
+
+1. O repositório foi importado no painel da Vercel;
+2. A Vercel detectou automaticamente o **Vite** como framework e aplicou a configuração padrão de build;
+3. A variável de ambiente `TMDB_ACCESS_TOKEN` foi cadastrada em *Settings → Environment Variables*;
+4. Os deploys são gerados automaticamente a cada push na branch principal;
+5. Por padrão, o projeto foi publicado em HTTPS no domínio `cp4-webdev-eta.vercel.app`, sem necessidade de configuração extra.
+
+### Configuração usada na Vercel
+
+| Item | Valor |
+| --- | --- |
+| Plataforma | Vercel |
+| Domínio | `https://cp4-webdev-eta.vercel.app` |
+| Framework | Vite (detectado automaticamente) |
+| Build command | `npm run build` |
+| Output directory | `dist` |
+| Variável de ambiente | `TMDB_ACCESS_TOKEN` |
+
 ## Scripts
 
 | Comando | Finalidade |
